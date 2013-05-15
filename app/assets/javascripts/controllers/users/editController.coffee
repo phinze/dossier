@@ -9,8 +9,7 @@ App.UsersEditController = Ember.ObjectController.extend
       @transitionToRoute('users.show', @content)
 
   cancel: ->
-    if @content.isDirty
-      @content.rollback()
+    @content.rollback()
     @transitionToRoute('users.show', @content)
 
   buttonTitle: 'Edit'
