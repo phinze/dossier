@@ -6,6 +6,8 @@ App.Router.map ->
   @resource 'users', ->
     @route 'new'
     @route 'show', path: '/:user_id'
+    @route 'edit', path: '/:user_id/edit'
+    @route 'destroy'
 
 App.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
@@ -30,3 +32,17 @@ App.UsersNewRoute = App.UsersRoute.extend
   setupController: (controller, model) ->
     @_super()
     controller.set('content', model)
+
+App.UsersEditRoute = Ember.Route.extend
+  model: (params) ->
+    App.User.find(params.user_id)
+  setupController: (controller, model) ->
+    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')
+
+App.UsersDestroyRoute = Ember.Route.extend
+  model: (params) ->
+    App.User.find(params.user_id)
+  setupController: (controller, model) ->
+    controller.set('content', model)
+    @controllerFor('application').set('currentRoute', 'users')

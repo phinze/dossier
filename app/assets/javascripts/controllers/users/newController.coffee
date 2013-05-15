@@ -1,15 +1,11 @@
 App.UsersNewController = Ember.ObjectController.extend
-  headerTitle: 'Create'
-  buttonTitle: 'Create'
-
   save: ->
-    @content.one 'didCreate.user', =>
-      @content.off '.user'
+    @content.save().then =>
       @transitionToRoute('users.show', @content)
-    @get('store').commit()
-    @content.one 'didError.user', =>
-      @content.off '.user'
     
   cancel: ->
     @content.deleteRecord()
-    @transitionToRoute('users.index')
+    @transitionToRoute 'users.index'
+
+  buttonTitle: 'Create'
+  headerTitle: 'Creating'
