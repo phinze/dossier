@@ -1,44 +1,38 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0.beta1'
 
-gem 'rails', '3.2.13'
-gem 'rails-api'
+gem 'pg'
 
-group :development, :test do
-  gem 'debugger'
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
-
+# Gems used only for assets and not required
+# in production environments by default.
 group :assets do
-  gem 'jquery-rails', '~> 2.2'
-  gem 'sass-rails', '~> 3.2'
-  gem 'coffee-rails', '~> 3.2'
-  gem 'compass-rails'
-  gem 'uglifier'
-  gem 'bootstrap-sass', '~> 2.0.3.0'
+  gem 'sass-rails',   '~> 4.0.0.beta1'
+  gem 'coffee-rails', '~> 4.0.0.beta1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+
+  gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
-  gem 'quiet_assets'
-end
+gem 'jquery-rails'
 
-gem 'devise'                   # server-side authentication
-gem 'bcrypt-ruby'              # password encryption
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
 
-gem 'ember-rails'
-gem 'ember-source', '1.0.0rc3.3'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.0.1'
 
-gem 'active_model_serializers'
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'ember-auth-rails'
-gem 'ember-auth-source', '~> 6.0'
+# Use unicorn as the app server
+# gem 'unicorn'
 
-gem 'unicorn'
+# Deploy with Capistrano
+# gem 'capistrano', group: :development
 
-# workaround https://github.com/emberjs/ember-rails/issues/168
-gem 'handlebars-source', '1.0.0.rc3'
+# To use debugger
+# gem 'debugger'

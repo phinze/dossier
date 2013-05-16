@@ -9,11 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-
-# Although this is not needed for an api-only application, rails4 
-# requires secret_key_base or secret_toke to be defined, otherwise an 
-# error is raised.
-# Using secret_token for rails3 compatibility. Change to secret_key_base
-# to avoid deprecation warning.
-# Can be safely removed in a rails3 api-only application.
-Dossier::Application.config.secret_token = 'c91a38e6d1ee9c308cac1e46e1a5e22a6024aae6d83a588c1b949016e5917fda96d9fb2d95ecba1c6df7781856864eca5b5d4ff681d5c9a0d4362c5cee6997d1'
+Dossier::Application.config.secret_key_base = 'dc1486a34251600d3b630adccaf824639c9e1dded92f20a7b5997c00b89daff7c0721e1712c23ebf0ae11696b02f408cf0dfbafabcda689f6ac19da5485d88dd'
