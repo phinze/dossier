@@ -1,11 +1,12 @@
 /* Main marketing message and sign up button */
 .jumbotron {
-  margin: 60px 0;
+  margin: 60px 0 20px 0;
   text-align: center;
 }
 .jumbotron h1 {
   font-size: 72px;
   line-height: 1;
+  font-family: 'Oswald';
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -14,37 +15,27 @@
 
 /* Supporting marketing content */
 .marketing {
-  margin: 60px 0;
+  h4 {
+    font-family: 'Oswald';
+  }
 }
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-
-.examples ul {
-  list-style-type: none;
-
-  li:nth-child(even) {
-    text-align: left;
-  }
-
-  li:nth-child(odd) {
-    text-align: right;
-  }
-
-  li {
+.examples {
+  p {
     border-bottom: solid #ddd 1px;
-
+    text-align: center;
     strong {
-      em {
-        color: #ff9640;
-      }
-      letter-spacing: -1px;
+      font-family: 'Didact Gothic';
       display: block;
-      font-size: 150%;
+      font-size: 26px;
+      line-height: 1.2em;
+      color: #000;
     }
 
-    font-style: italic;
+    color: #999;
     padding: 10px;
   }
 }
