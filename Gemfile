@@ -45,5 +45,6 @@ gem 'unicorn' # for heroku
 
 # trying these from
 # http://stackoverflow.com/questions/15690076/asset-routing-error-on-heroku-after-rails-4-update
-gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+# gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+# ^^ this one breaks locally
 gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
