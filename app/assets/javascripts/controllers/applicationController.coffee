@@ -1,2 +1,2 @@
-App.ApplicationController = Ember.Controller.extend({
+Dossier.ApplicationController = Ember.Controller.extend({
 })

@@ -1,2 +1,2 @@
-App.Store = DS.Store.extend
-  revision: 12
+Dossier.Store = DS.Store.extend
+  revision: 11

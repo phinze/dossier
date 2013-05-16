@@ -1,4 +1,4 @@
-App.UsersNewController = Ember.ObjectController.extend
+Dossier.UsersNewController = Ember.ObjectController.extend
   save: ->
     @content.save().then =>
       @transitionToRoute('users.show', @content)

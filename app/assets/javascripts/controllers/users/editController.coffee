@@ -1,12 +1,12 @@
-App.UsersEditController = Ember.ObjectController.extend
+Dossier.UsersEditController = Ember.ObjectController.extend
   destroy: ->
     @content.deleteRecord()
     @store.commit()
     @transitionTo('users.index')
 
   save: ->
-    @content.save().then =>
-      @transitionToRoute('users.show', @content)
+    @store.commit()
+    @transitionToRoute('users.show', @content)
 
   cancel: ->
     @content.rollback()

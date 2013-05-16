@@ -1,48 +1,37 @@
-App.Router.reopen
-  location: 'history'
-  rootURL: '/'
-
-App.Router.map ->
-  @resource 'users', ->
-    @route 'new'
-    @route 'show', path: '/:user_id'
-    @route 'edit', path: '/:user_id/edit'
-    @route 'destroy'
-
-App.IndexRoute = Ember.Route.extend
+Dossier.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'home')
 
-App.UsersRoute = Ember.Route.extend
+Dossier.UsersRoute = Ember.Route.extend
   model: ->
-    App.User.find()
+    Dossier.User.find()
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'users')
 
-App.UsersShowRoute = Ember.Route.extend
+Dossier.UsersShowRoute = Ember.Route.extend
   model: (params) ->
-    App.User.find(params.user_id)
+    Dossier.User.find(params.user_id)
   setupController: (controller, model) ->
     controller.set('content', model)
     @controllerFor('application').set('currentRoute', 'users')
 
-App.UsersNewRoute = App.UsersRoute.extend
+Dossier.UsersNewRoute = Dossier.UsersRoute.extend
   model: ->
-    App.User.createRecord()
+    Dossier.User.createRecord()
   setupController: (controller, model) ->
     @_super()
     controller.set('content', model)
 
-App.UsersEditRoute = Ember.Route.extend
+Dossier.UsersEditRoute = Ember.Route.extend
   model: (params) ->
-    App.User.find(params.user_id)
+    Dossier.User.find(params.user_id)
   setupController: (controller, model) ->
     controller.set('content', model)
     @controllerFor('application').set('currentRoute', 'users')
 
-App.UsersDestroyRoute = Ember.Route.extend
+Dossier.UsersDestroyRoute = Ember.Route.extend
   model: (params) ->
-    App.User.find(params.user_id)
+    Dossier.User.find(params.user_id)
   setupController: (controller, model) ->
     controller.set('content', model)
     @controllerFor('application').set('currentRoute', 'users')

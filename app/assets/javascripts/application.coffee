@@ -1,15 +1,12 @@
-#= require modernizr
 #= require jquery
+#= require jquery_ujs
 #= require handlebars
 #= require ember
 #= require ember-data
-#= require bootstrap
+#= require ember-auth
 #= require_self
-#= require store
-#= require routes
-#= require_tree ./controllers
-#= require_tree ./models
-#= require_tree ./templates
-#= require_tree ./views
+#= require auth
+#= require dossier
+#= require_tree .
 
-window.App = Ember.Application.create()
+window.Dossier = Ember.Application.create()

@@ -3,13 +3,23 @@
     <div class='container'>
       <div class='nav-collapse collapse'>
         <ul class='nav'>
-          {{#view App.LinkView route="index"}}
+          {{#view Dossier.LinkView route="index"}}
             {{#linkTo 'index'}}Home{{/linkTo}}
           {{/view}}
-          {{#view App.LinkView route="users"}}
+          {{#view Dossier.LinkView route="users"}}
             {{#linkTo 'users.index'}}Users{{/linkTo}}
           {{/view}}
         </ul>
+
+        {{#if Dossier.Auth.signedIn}}
+          show something
+        {{else}}
+          <form class="navbar-search pull-right">
+              <input type="text" class="span2" placeholder="Login">
+              <input type="text" class="span2" placeholder="Password">
+              <input type="submit" value="Login" class="btn"/>
+          </form>
+        {{/if}}
       </div>
     </div>
   </div>

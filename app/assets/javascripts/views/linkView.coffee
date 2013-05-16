@@ -1,4 +1,4 @@
-App.LinkView = Ember.View.extend({
+Dossier.LinkView = Ember.View.extend({
     tagName: 'li'
     classNameBindings: ['active']
     active: Ember.computed(->
