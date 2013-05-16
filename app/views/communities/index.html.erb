@@ -1,0 +1,28 @@
+<h2>Communities</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @communities.each do |community| %>
+    <tr>
+      <td><%= community.name %></td>
+      <td><code><%= community.url %></code></td>
+      <td>
+        <%= link_to 'Edit', edit_community_path(community), class: 'btn btn-small' %>
+        <%= link_to 'X',
+          community_path(community),
+          method: :delete,
+          data: {
+            confirm: "Are you sure you want to delete #{community.name}?",
+          },
+          class: 'btn btn-small btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require twitter/bootstrap/rails/confirm
 //= require_tree .
+
+$(function (){
+  $.fn.twitter_bootstrap_confirmbox.defaults = {
+    title: "Please Confirm",
+    cancel: "Cancel",
+    proceed: "OK",
+    proceed_class: "btn proceed btn-danger"
+  };
+})
