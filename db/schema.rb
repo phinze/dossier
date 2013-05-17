@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   end
 
   create_table "facets", force: true do |t|
+    t.integer  "community_id"
     t.string   "klass"
     t.string   "name"
     t.string   "options"
@@ -34,7 +35,6 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   create_table "facts", force: true do |t|
     t.integer  "membership_id"
     t.integer  "facet_id"
-    t.string   "facet_type"
     t.string   "value"
     t.integer  "position"
     t.datetime "created_at"

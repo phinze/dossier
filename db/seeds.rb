@@ -23,15 +23,31 @@ mario = User.create!(
 
 marios_dossier = mushroom_kingdom.add_member(mario)
 
-mushroom_kingdom_avatar = Facet.create(
+mushroom_kingdom_avatar = Facet.create!(
   community: mushroom_kingdom,
   name: 'Avatar',
   klass: 'Facet::ImageURL',
   options: JSON.dump(width: 150)
 )
 
-marios_avatar = Fact.create!(
+mushroom_kingdom_bio = Facet.create!(
+  community: mushroom_kingdom,
+  name: 'Bio',
+  klass: 'Facet::ImageURL',
+  options: JSON.dump(width: 150)
+)
+
+Fact.create!(
   membership: marios_dossier,
   facet: mushroom_kingdom_avatar,
-  value: 'http://pt.board.goodgamestudios.com/gangster/image.php?u=357165&dateline=1365639526'
+  value: 'http://media.tumblr.com/1da3c7ddd226b49f0e680773285b443f/tumblr_inline_mhs55yLJ5v1qz4rgp.png'
 )
+
+
+Fact.create!(
+  membership: marios_dossier,
+  facet: mushroom_kingdom_bio,
+  value: 'Mario is a Brooklyn-born plumber and co-owner of Mario Bros. Plumbing, their family business, along with his younger brother Luigi.'
+)
+
+

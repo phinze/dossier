@@ -1,1 +1,13 @@
-<h2><%= @membership.user.display %></h2>
+<div class="row-fluid">
+  <div class="span3">
+    <%= image_tag @membership.avatar.value, class: 'avatar img-circle' %>
+  </div>
+  <div class="span9">
+    <h2><%= @membership.user.display %></h2>
+    <hr />
+    <p class="bio"><%= @membership.bio.value %></p>
+    <hr />
+  </div>
+</div>
+
+

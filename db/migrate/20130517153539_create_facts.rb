@@ -2,7 +2,7 @@ class CreateFacts < ActiveRecord::Migration
   def change
     create_table :facts do |t|
       t.references :membership
-      t.references :facet, polymorphic: true
+      t.references :facet
       t.string :value
       t.integer :position
 
