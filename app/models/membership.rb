@@ -17,4 +17,8 @@ class Membership < ActiveRecord::Base
   def title
     facts.where(facets: {name: 'Title'}).first || NullFact.new
   end
+
+  def department
+    facts.where(facets: {name: 'Department'}).first || NullFact.new
+  end
 end

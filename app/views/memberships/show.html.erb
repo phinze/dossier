@@ -4,6 +4,9 @@
     <p class="title">
       <%= @membership.title.value %>
     </p>
+    <p class="department">
+      Department: <%= link_to @membership.department.value, '#' %>
+    </p>
   </div>
   <div class="span9">
     <h2><%= @membership.user.display %></h2>
