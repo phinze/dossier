@@ -2,15 +2,11 @@ class CommunitiesController < InheritedResources::Base
   respond_to :html
 
   def create
-    super do |format|
-      format.html { redirect_to communities_path }
-    end
+    create! { communities_path }
   end
 
   def update
-    super do |format|
-      format.html { redirect_to communities_path }
-    end
+    update! { communities_path }
   end
 
   private

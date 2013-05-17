@@ -1,4 +1,4 @@
-<%= simple_form_for @community do |f| %>
+<%= simple_form_for @community, html: {class: 'form-horizontal'} do |f| %>
   <%= f.input :name %>
   <%= f.input :url, as: :url %>
   <%= f.button :submit, class: 'btn btn-primary' %>
