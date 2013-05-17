@@ -14,7 +14,7 @@
       <td><code><%= community.url %></code></td>
       <td>
         <%= link_to 'Edit', edit_community_path(community), class: 'btn btn-small' %>
-        <%= link_to 'X',
+        <%# link_to 'X',
           community_path(community),
           method: :delete,
           data: {

@@ -15,7 +15,7 @@
     <tr>
       <td><%= link_to membership.user.display, community_membership_path(@community, membership) %></td>
       <td>
-        <%= link_to 'X',
+        <%# link_to 'X',
           community_membership_path(@community, membership),
           method: :delete,
           data: {
