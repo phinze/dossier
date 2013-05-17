@@ -1,0 +1,29 @@
+<h2><%= @community.name %></h2>
+
+<p>URL: <%= @community.url %></p>
+
+<h3>Members</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @community.memberships.each do |membership| %>
+    <tr>
+      <td><%= membership.user.display %></td>
+      <td>
+        <%= link_to 'X',
+          community_membership_path(@community, membership),
+          method: :delete,
+          data: {
+            confirm: "Are you sure you want to remove #{membership.user.full_name} from #{membership.community.name}?",
+          },
+          class: 'btn btn-small btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

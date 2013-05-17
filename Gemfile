@@ -25,3 +25,6 @@ gem 'simple_form', '3.0.0.rc'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'twitter-bootstrap-rails-confirm'
 gem 'devise', '3.0.0.rc'
+
+gem 'faker' # for db:seed - will eventualluy be relegated to a development gem group
+

@@ -4,5 +4,7 @@ Dossier::Application.routes.draw do
 
   get 'home' => 'home#user', as: :user_home
 
-  resources :communities
+  resources :communities do
+    resources :memberships
+  end
 end

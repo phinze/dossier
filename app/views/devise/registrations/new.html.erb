@@ -12,6 +12,8 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true, label: 'Confirm' %>
+    <%= f.input :full_name, required: true %>
+    <%= f.input :short_name, required: true, label: 'What should we call you?', hint: 'First name? Nickname? Whatever you like!' %>
   </div>
 
   <div class="form-actions">

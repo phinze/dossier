@@ -39,3 +39,14 @@
     padding: 10px;
   }
 }
+
+$community-radius: 10px;
+
+.community-block {
+  @extend .span4;
+  background-color: #ddd;
+  padding: 0.5em;
+  -webkit-border-radius: $community-radius;
+  -moz-border-radius: $community-radius;
+  border-radius: $community-radius;
+}

@@ -1,5 +1,6 @@
 class CommunitiesController < InheritedResources::Base
   respond_to :html
+  before_filter :authenticate_user!
 
   def create
     create! { communities_path }
