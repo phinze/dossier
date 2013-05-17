@@ -22,8 +22,8 @@
           <li><%= link_to current_user.display, user_home_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+          <li><%= link_to "Sign up", '#' %></li>
         <% end %>
       </ul>
       <h3 class="muted"><%= image_tag 'dossier-logo-orange.svg', class: 'header-logo' %>Dossier</h3>
