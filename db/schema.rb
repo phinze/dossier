@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20130517153539) do
 
   create_table "facets", force: true do |t|
     t.integer  "community_id"
-    t.string   "klass"
-    t.string   "name"
-    t.string   "options"
+    t.text     "klass"
+    t.text     "name"
+    t.text     "options"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   create_table "facts", force: true do |t|
     t.integer  "membership_id"
     t.integer  "facet_id"
-    t.string   "value"
+    t.text     "value"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,26 +53,26 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.text     "email",                  default: "", null: false
+    t.text     "encrypted_password",     default: "", null: false
+    t.text     "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
+    t.text     "current_sign_in_ip"
+    t.text     "last_sign_in_ip"
+    t.text     "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
+    t.text     "unconfirmed_email"
     t.integer  "failed_attempts",        default: 0
-    t.string   "unlock_token"
+    t.text     "unlock_token"
     t.datetime "locked_at"
-    t.string   "authentication_token"
-    t.string   "full_name"
-    t.string   "short_name"
+    t.text     "authentication_token"
+    t.text     "full_name"
+    t.text     "short_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

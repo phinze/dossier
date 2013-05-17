@@ -4,6 +4,11 @@ class Community < ActiveRecord::Base
   has_many :memberships
   has_many :users, through: :memberships
 
+
+  def self.example
+    where(name: 'Mushroom Kingdom').first
+  end
+
   def add_member(user)
     membership = Membership.new(user: user, community: self)
     if membership.save

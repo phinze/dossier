@@ -3,7 +3,7 @@ class CreateFacts < ActiveRecord::Migration
     create_table :facts do |t|
       t.references :membership
       t.references :facet
-      t.string :value
+      t.text :value
       t.integer :position
 
 
@@ -13,9 +13,9 @@ class CreateFacts < ActiveRecord::Migration
     create_table :facets do |t|
       t.references :community
 
-      t.string :klass
-      t.string :name 
-      t.string :options
+      t.text :klass
+      t.text :name 
+      t.text :options
 
       t.timestamps
     end

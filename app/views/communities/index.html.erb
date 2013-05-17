@@ -10,7 +10,7 @@
   <tbody>
   <% @communities.each do |community| %>
     <tr>
-      <td><%= community.name %></td>
+      <td><%= link_to community.name, community_path(community) %></td>
       <td><code><%= community.url %></code></td>
       <td>
         <%= link_to 'Edit', edit_community_path(community), class: 'btn btn-small' %>
