@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130517143521) do
+ActiveRecord::Schema.define(version: 20130517153539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,24 @@ ActiveRecord::Schema.define(version: 20130517143521) do
   create_table "communities", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facets", force: true do |t|
+    t.string   "klass"
+    t.string   "name"
+    t.string   "options"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facts", force: true do |t|
+    t.integer  "membership_id"
+    t.integer  "facet_id"
+    t.string   "facet_type"
+    t.string   "value"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

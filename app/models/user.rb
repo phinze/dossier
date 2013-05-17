@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
   validates :short_name, presence: true
 
   def display
-    email
+    full_name
   end
 end

@@ -5,7 +5,7 @@ body {
 
 .masthead {
   h3 {
-    font-family: 'Oswald';
+    font-family: 'Open Sans';
   }
 }
 
@@ -22,3 +22,11 @@ span.boom {
   color: #ff9640;
 }
 
+body,
+input,
+button,
+select,
+textarea,
+.navbar-search .search-query {
+  font-family: 'Droid Serif', Georgia, "Times New Roman", Times, serif;
+}

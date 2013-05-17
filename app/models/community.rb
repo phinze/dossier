@@ -5,7 +5,12 @@ class Community < ActiveRecord::Base
   has_many :users, through: :memberships
 
   def add_member(user)
-    users << user
-    save
+    membership = Membership.new(user: user, community: self)
+    if membership.save
+      self.memberships << membership
+      membership 
+    else
+      false
+    end
   end
 end
