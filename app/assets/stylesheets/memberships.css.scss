@@ -43,3 +43,32 @@ $avatar_shadow: 5px 5px 3px #888888;
     padding: 5px;
   }
 }
+
+.simple-facts {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    padding: 20px;
+
+    p {
+      padding: 10px;
+    }
+  }
+
+  .author {
+    color: #999;
+  }
+}
+
+$small_avatar_shadow: 3px 3px 1px #888888;
+.small-avatar {
+  -webkit-box-shadow: $small_avatar_shadow;
+     -moz-box-shadow: $small_avatar_shadow;
+          box-shadow: $small_avatar_shadow;
+
+  width: 60px;
+  margin: 0 10px;
+  display: block;
+  float: left;
+}

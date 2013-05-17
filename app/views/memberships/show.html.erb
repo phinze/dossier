@@ -20,6 +20,17 @@
     <hr />
     <p class="bio"><%= @membership.bio %></p>
     <hr />
+    <ul class="simple-facts">
+    <% @membership.simple_facts.each do |fact| %>
+      <li>
+        <%= image_tag fact.author.avatar, class: 'small-avatar img-circle' %>
+        <p>
+        <%= fact.value %><br />
+        <span class="author"><%= fact.author.short_name %></span>
+        </p>
+      </li>
+    <% end %>
+    </ul>
   </div>
 </div>
 

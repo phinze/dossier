@@ -15,6 +15,8 @@
   h.merge(facet.to_sym => Facet.create!(community: @mushroom_kingdom, name: facet))
 end
 
+@simple_facet = Facet.create!(community: @mushroom_kingdom, name: 'simple')
+
 def mushroom_kingdom_member(options)
   user = User.create!(
     email: options.delete(:email),
@@ -30,12 +32,10 @@ def mushroom_kingdom_member(options)
     Fact.create!( membership: dossier, facet: @facets.fetch(key), value: value)
   end
 
-  Fact.create!( membership: dossier, facet: @facets[:bio], value: options[:bio])
-  Fact.create!( membership: dossier, facet: @facets[:title], value: options[:title])
-  Fact.create!( membership: dossier, facet: @facets[:department], value: options[:department])
+  dossier
 end
 
-mushroom_kingdom_member(
+mario = mushroom_kingdom_member(
   email: 'mario@example.com',
   password: 'mariomario',
   name: 'Mario Plumberman',
@@ -49,7 +49,7 @@ mushroom_kingdom_member(
   phone: '(312) 555-1234',
 )
 
-mushroom_kingdom_member(
+luigi = mushroom_kingdom_member(
   email: 'luigi@example.com',
   password: 'luigiluigi',
   name: 'Luigi Plumberman',
@@ -63,7 +63,7 @@ mushroom_kingdom_member(
   phone: '(312) 555-1234',
 )
 
-mushroom_kingdom_member(
+peach = mushroom_kingdom_member(
   email: 'peach@example.com',
   password: 'peachpeach',
   name: 'Princess Peach',
@@ -75,4 +75,46 @@ mushroom_kingdom_member(
   facebook: 'princess.of.toadstool',
   github: 'peachcancode',
   phone: '(312) 555-1234',
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: mario,
+  author: luigi.user,
+  value: %q(This man can stomp a goomba like you wouldn't believe!)
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: mario,
+  author: peach.user,
+  value: %q(His moustache is so dreamy.)
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: luigi,
+  author: mario.user,
+  value: %q(The best brother a guy could ask for, hands down.)
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: luigi,
+  author: peach.user,
+  value: %q(Luigi is braver than you think; he's saved Mario more than once.)
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: peach,
+  author: mario.user,
+  value: 'Peach makes the best cake in the whole world.'
+)
+
+Fact.create(
+  facet: @simple_facet,
+  membership: peach,
+  author: luigi.user,
+  value: 'I feel confident when Peach is around, thanks to her encouraging attitude.'
 )

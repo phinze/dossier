@@ -10,6 +10,10 @@ class Membership < ActiveRecord::Base
     user.email
   end
 
+  def simple_facts
+    facts.where(facets: {name: 'simple'}).all
+  end
+
   FACETS = %w[
     avatar
     bio

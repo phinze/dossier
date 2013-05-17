@@ -1,6 +1,7 @@
 class CreateFacts < ActiveRecord::Migration
   def change
     create_table :facts do |t|
+      t.references :author
       t.references :membership
       t.references :facet
       t.text :value

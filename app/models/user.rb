@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def display
     full_name
   end
+
+  def avatar
+    memberships.first.avatar
+  end
 end

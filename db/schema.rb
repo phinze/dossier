@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   end
 
   create_table "facts", force: true do |t|
+    t.integer  "author_id"
     t.integer  "membership_id"
     t.integer  "facet_id"
     t.text     "value"
