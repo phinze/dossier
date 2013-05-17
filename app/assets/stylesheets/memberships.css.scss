@@ -1,3 +1,8 @@
+h2 {
+  font-family: 'Open Sans'; 
+  line-height: 1em;
+}
+
 $avatar_shadow: 5px 5px 3px #888888;
 .avatar {
   -webkit-box-shadow: $avatar_shadow;
@@ -5,12 +10,9 @@ $avatar_shadow: 5px 5px 3px #888888;
           box-shadow: $avatar_shadow;
 
   width: 175px;
+  margin-bottom: 10px;
 }
 
-h2 {
-  font-family: 'Open Sans'; 
-  line-height: 1em;
-}
 
 .bio {
   font-family: 'Droid Serif';
@@ -20,4 +22,10 @@ h2 {
   color: #666;
   line-height: 1.4em;
   word-spacing: 5px;
+}
+
+.title {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 16px;
 }

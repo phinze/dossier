@@ -1,6 +1,9 @@
 <div class="row-fluid">
   <div class="span3">
     <%= image_tag @membership.avatar.value, class: 'avatar img-circle' %>
+    <p class="title">
+      <%= @membership.title.value %>
+    </p>
   </div>
   <div class="span9">
     <h2><%= @membership.user.display %></h2>

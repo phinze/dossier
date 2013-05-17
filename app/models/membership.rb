@@ -13,4 +13,8 @@ class Membership < ActiveRecord::Base
   def bio
     facts.where(facets: {name: 'Bio'}).first || NullFact.new
   end
+
+  def title
+    facts.where(facets: {name: 'Title'}).first || NullFact.new
+  end
 end
