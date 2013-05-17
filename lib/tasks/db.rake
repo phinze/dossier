@@ -1,11 +1,14 @@
 namespace :db do
-  task :kill_connections do
-    ActiveRecord::Base.configurations.each_value do |config|
+  task :kill_connections => :environment do
+    ActiveRecord::Base.configurations.each do |env, config|
       # Skip entries that don't have a database key
       next unless config['database']
 
       # Only do this to local DBs
-      next unless config['host'] == 'localhost'
+      next unless config['host'] == 'localhost' || config['host'].nil?
+
+      # Skip anything that looks like production
+      next if env == 'production'
 
       ActiveRecord::Base.establish_connection(config)
       begin
