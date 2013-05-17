@@ -29,3 +29,17 @@ $avatar_shadow: 5px 5px 3px #888888;
   font-weight: bold;
   font-size: 16px;
 }
+
+.metadata {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    line-height: 2em;
+  }
+
+  i {
+    color: #999;
+    padding: 5px;
+  }
+}

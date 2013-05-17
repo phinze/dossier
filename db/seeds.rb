@@ -11,12 +11,9 @@
   url: 'http://example.com'
 )
 
-@facets = {
-  avatar: Facet.create!(community: @mushroom_kingdom, name: 'Avatar'),
-  bio:    Facet.create!( community: @mushroom_kingdom, name: 'Bio'),
-  title:  Facet.create!( community: @mushroom_kingdom, name: 'Title'),
-  department:  Facet.create!( community: @mushroom_kingdom, name: 'Department'),
-}
+@facets = Membership::FACETS.inject({}) do |h, facet|
+  h.merge(facet.to_sym => Facet.create!(community: @mushroom_kingdom, name: facet))
+end
 
 def mushroom_kingdom_member(options)
   user = User.create!(
@@ -45,7 +42,11 @@ mushroom_kingdom_member(
   title: 'Chief Plumbing Officer',
   avatar: 'http://media.tumblr.com/1da3c7ddd226b49f0e680773285b443f/tumblr_inline_mhs55yLJ5v1qz4rgp.png',
   bio: 'Mario is a Brooklyn-born plumber and co-owner of Mario Bros. Plumbing, their family business, along with his younger brother Luigi.',
-  department: 'Adventure'
+  department: 'Adventure',
+  twitter: 'mario',
+  facebook: 'mario.the.plumber',
+  github: 'mariocodes',
+  phone: '(312) 555-1234',
 )
 
 mushroom_kingdom_member(
@@ -55,7 +56,11 @@ mushroom_kingdom_member(
   title: 'Executive Vice Plumber',
   avatar: 'http://images2.wikia.nocookie.net/__cb20080427231615/ssb/images/d/d3/LuigiBrawl.jpg',
   bio: %q(Luigi (Japanese: ルイージ) is Mario's younger, taller, thinner twin brother, and the deuteragonist of the Mario series. Luigi has helped and fought alongside his brother on many occasions. Throughout his life, he has lived in Mario's shadow, developing both cowardly and heroic tendencies.),
-  department: 'Adventure'
+  department: 'Adventure',
+  twitter: 'luigi',
+  facebook: 'luigi.the.plumber',
+  github: 'luigicodes',
+  phone: '(312) 555-1234',
 )
 
 mushroom_kingdom_member(
@@ -65,5 +70,9 @@ mushroom_kingdom_member(
   title: 'Princess of Toadstool',
   avatar: 'https://dl.dropboxusercontent.com/u/12210925/mlpit-princess-peach.jpg',
   bio: %q(Princess Peach, originally called Princess Toadstool, sometimes referred to as Princess Peach Toadstool or simply Peach (Japanese: ピーチ姫) is the princess of the Mushroom Kingdom. Peach first appeared in Super Mario Bros.. She was created by Shigeru Miyamoto to be the damsel-in-distress throughout most Mario games. She resides in her castle along with many Toads. Her kingdom is often attacked by the Koopa Troop, led by Bowser.),
-  department: 'Castle'
+  department: 'Castle',
+  twitter: 'princess_peach',
+  facebook: 'princess.of.toadstool',
+  github: 'peachcancode',
+  phone: '(312) 555-1234',
 )

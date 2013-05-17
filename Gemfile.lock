@@ -62,6 +62,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    font-awesome-sass-rails (3.0.2.2)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     google-webfonts-rails (0.0.1)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
@@ -150,6 +153,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.1.0)
   coffee-rails (~> 4.0.0.beta1)
   devise (= 3.0.0.rc)
+  font-awesome-sass-rails
   google-webfonts-rails
   inherited_resources!
   jbuilder (~> 1.0.1)

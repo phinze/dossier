@@ -1,17 +1,24 @@
 <div class="row-fluid">
   <div class="span3">
-    <%= image_tag @membership.avatar.value, class: 'avatar img-circle' %>
+    <%= image_tag @membership.avatar, class: 'avatar img-circle' %>
     <p class="title">
-      <%= @membership.title.value %>
+      <%= @membership.title %>
     </p>
     <p class="department">
-      Department: <%= link_to @membership.department.value, '#' %>
+      Department: <%= link_to @membership.department, '#' %>
     </p>
+    <ul class="metadata">
+      <li><i class="icon-twitter"></i>@<%= @membership.twitter %></li>
+      <li><i class="icon-facebook"></i><%= @membership.facebook %></li>
+      <li><i class="icon-envelope"></i><%= @membership.email %></li>
+      <li><i class="icon-github"></i><%= @membership.github %></li>
+      <li><i class="icon-phone"></i><%= @membership.phone %></li>
+    </ul>
   </div>
   <div class="span9">
     <h2><%= @membership.user.display %></h2>
     <hr />
-    <p class="bio"><%= @membership.bio.value %></p>
+    <p class="bio"><%= @membership.bio %></p>
     <hr />
   </div>
 </div>

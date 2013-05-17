@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   enable_extension "plpgsql"
 
   create_table "communities", force: true do |t|
-    t.string   "name"
-    t.string   "url"
+    t.text     "name"
+    t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

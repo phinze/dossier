@@ -1,8 +1,8 @@
 class CreateCommunities < ActiveRecord::Migration
   def change
     create_table :communities do |t|
-      t.string :name
-      t.string :url
+      t.text :name
+      t.text :url
 
       t.timestamps
     end
