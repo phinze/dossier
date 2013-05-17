@@ -31,7 +31,7 @@
 
     <hr class="narrower">
   <% else %>
-    <%= link_to image_tag('dossier-logo-orange-box.svg', class: 'logo'), communities_path %>
+    <%= link_to image_tag('dossier-logo-orange-box.svg', class: 'logo'), root_path %>
   <% end %>
 
   <%= bootstrap_flash %>
@@ -40,7 +40,10 @@
   <hr>
 
   <div class="footer">
-    <%= link_to image_tag('dossier-logo-light-gray.svg', class: 'footer-logo'), communities_path %>
+    <% unless params[:controller] == 'home' %>
+      <%= link_to image_tag(Community.example.logo_url, class: 'footer-logo'), community_path(Community.example) %>
+    <% end %>
+    <%= link_to image_tag('dossier-logo-light-gray.svg', class: 'footer-logo'), root_url %>
   </div>
 
   <a href="https://github.com/phinze/dossier"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130517153539) do
   create_table "communities", force: true do |t|
     t.text     "name"
     t.text     "url"
+    t.text     "logo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

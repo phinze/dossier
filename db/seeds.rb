@@ -8,7 +8,8 @@
  
 @mushroom_kingdom = Community.create!(
   name: 'Mushroom Kingdom',
-  url: 'http://example.com'
+  url: 'http://example.com',
+  logo_url: 'http://images.wikia.com/ssb/images/3/30/MarioSymbol.svg'
 )
 
 @facets = Membership::FACETS.inject({}) do |h, facet|
