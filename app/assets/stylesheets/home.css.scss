@@ -17,10 +17,15 @@
 .marketing {
   h4 {
     font-family: 'Open Sans';
+    font-weight: 200;
   }
 }
 .marketing p + h4 {
   margin-top: 28px;
+}
+
+.marketing ul {
+  list-style-type: square;
 }
 
 .examples {
