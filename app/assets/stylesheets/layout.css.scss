@@ -9,6 +9,10 @@ body {
   }
 }
 
+.nav {
+  margin: 10px 0 0 0;
+}
+
 /* Custom container */
 .container-narrow {
   margin: 0 auto;
@@ -45,4 +49,13 @@ textarea,
   display: block;
   margin: 0 auto;
   width: 100px;
+}
+
+.header-logo {
+  width: 60px;
+  padding: 0 10px;
+}
+
+.narrower {
+  margin: 10px 0 !important;
 }
